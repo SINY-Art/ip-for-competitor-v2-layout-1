@@ -91,73 +91,72 @@
         </div>
       </div>
     </div>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-49S9Z5FFN3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-49S9Z5FFN3');
-</script>
-    <script>// Set default consent to 'denied' as a placeholder
-// Determine actual values based on your own requirements
-gtag('consent', 'default', {
-  ad_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied',
-  analytics_storage: 'denied',
-})
-
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-49S9Z5FFN3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-49S9Z5FFN3');
     </script>
-    <script>// Create one update function for each consent parameter
-function consentGrantedAdStorage() {
-  gtag('consent', 'update', {
-    ad_storage: 'granted',
-  })
-}
-function consentGrantedAdUserData() {
-  gtag('consent', 'update', {
-    ad_user_data: 'granted',
-  })
-}
-function consentGrantedAdPersonalization() {
-  gtag('consent', 'update', {
-    ad_personalization: 'granted',
-  })
-}
-function consentGrantedAnalyticsStorage() {
-  gtag('consent', 'update', {
-    analytics_storage: 'granted',
-  })
-}
-
-document
-  .querySelector('.accept-cookie-button')
-  .addEventListener('click', function (e) {
-    e.preventDefault()
-    document.cookie = 'cookiesAccepted=true;max-age=31536000;path=/'
-    document.querySelector('.cookies-policy-banner').remove()
-    consentGrantedAdStorage()
-    consentGrantedAdUserData()
-    consentGrantedAdPersonalization()
-    consentGrantedAnalyticsStorage()
-  })
-
-let matches = document.cookie.match(
-  new RegExp(
-    '(?:^|; )' +
-      'cookiesAccepted'.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') +
-      '=([^;]*)'
-  )
-)
-if (matches && matches[1] === 'true') {
-  document.querySelector('.cookies-policy-banner').remove()
-  consentGrantedAdStorage()
-  consentGrantedAdUserData()
-  consentGrantedAdPersonalization()
-  consentGrantedAnalyticsStorage()
-}
-
+    <script>// Set default consent to 'denied' as a placeholder
+      // Determine actual values based on your own requirements
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+      })
+    </script>
+    <script>
+      // Create one update function for each consent parameter
+      function consentGrantedAdStorage() {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+        })
+      }
+      function consentGrantedAdUserData() {
+        gtag('consent', 'update', {
+          ad_user_data: 'granted',
+        })
+      }
+      function consentGrantedAdPersonalization() {
+        gtag('consent', 'update', {
+          ad_personalization: 'granted',
+        })
+      }
+      function consentGrantedAnalyticsStorage() {
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+        })
+      }
+      
+      document
+        .querySelector('.accept-cookie-button')
+        .addEventListener('click', function (e) {
+          e.preventDefault()
+          document.cookie = 'cookiesAccepted=true;max-age=31536000;path=/'
+          document.querySelector('.cookies-policy-banner').remove()
+          consentGrantedAdStorage()
+          consentGrantedAdUserData()
+          consentGrantedAdPersonalization()
+          consentGrantedAnalyticsStorage()
+        })
+      
+      let matches = document.cookie.match(
+        new RegExp(
+          '(?:^|; )' +
+            'cookiesAccepted'.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') +
+            '=([^;]*)'
+        )
+      )
+      if (matches && matches[1] === 'true') {
+        document.querySelector('.cookies-policy-banner').remove()
+        consentGrantedAdStorage()
+        consentGrantedAdUserData()
+        consentGrantedAdPersonalization()
+        consentGrantedAnalyticsStorage()
+      }
     </script>
     <script src="js/main.min.js"></script>
   </body>
